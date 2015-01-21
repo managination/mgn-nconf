@@ -2,17 +2,22 @@ Package.describe({
   name: 'mgn:nconf',
   version: '0.0.1',
   // Brief, one-line summary of the package.
-  summary: '',
+  summary: 'nconf packaged for meteor',
   // URL to the Git repository containing the source code for this package.
-  git: '',
-  // By default, Meteor will default to using README.md for documentation.
+  git: 'git@github.com:managination/mgn-nconf.git',
+  // Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
 });
 
+Npm.depends({
+              "nconf": "0.7.1"
+            });
+
 Package.onUse(function(api) {
-  api.versionsFrom('1.0.3.1');
+  api.versionsFrom('1.0');
   api.addFiles('mgn:nconf.js');
+  api.export("nconf", "server");
 });
 
 Package.onTest(function(api) {
